@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <title>remixer</title>
+        
+    <!-- Load external CSS styles -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- 
+TODO:
+desaturating the bg colors would help
+nature theme music and sound effects, based on words from the poems, heartbeat
+poems on this theme 
+toggle sound button’ turn into a volume slider
+arrows control the volume outside of the ’ i ’ menu?
+save state as hash in url has table
+hosting/domain
+set focus on textarea without having "e" entered
+undefined error after moving some of the magnets. Fixed?
+ -->
+
+    <div id="bgdiv">
+      <p id="Instructions">[R] to reset.</p>
+
+      <button onclick="createScene(jameswright)">
+        Lying in a Hammock at William Duffy’s Farm in Pine Island, Minnesota By
+        James Wright</button
+      ><br />
+     
+      <button onclick="createScene(moana)">Aller plus loin from Moana 2</button>
+     
+     
+      <button onclick="createScene(theroadnot)">
+        The Road Not Taken by Robert Frost
+      </button>
+      <button onclick="createScene(nothinggold)">
+        Nothing Gold Can Stay by Robert Frost
+      </button>
+
+      <button onclick="createScene(theoldpond)">
+        The Old Pond by Matsuo Bashō
+      </button>
+    </div>
+    <script src="scripts.js"></script>
+  </body>
+</html>
