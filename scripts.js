@@ -87,10 +87,10 @@ function removeMagnets() {
       document.getElementById(i).remove();
     }
   }
-  
-  if (document.querySelectorAll('.magnet').length > 0) {
-    for (let i = 0; i <= document.querySelectorAll('.magnet').length; i++) {
-      document.querySelectorAll('.magnet')[i].remove();
+
+  if (document.querySelectorAll(".magnet").length > 0) {
+    for (let i = 0; i <= document.querySelectorAll(".magnet").length; i++) {
+      document.querySelectorAll(".magnet")[i].remove();
     }
   }
   totalMagnets = 0;
@@ -98,10 +98,13 @@ function removeMagnets() {
 
 //clear Screen
 function clearScreen() {
-  removeMagnets()
+  removeMagnets();
   hideButtons();
   instructionsToggle ? instructionsToggleFunction() : null;
-  if (document.getElementById("textinput") || document.getElementById("enter")) {
+  if (
+    document.getElementById("textinput") ||
+    document.getElementById("enter")
+  ) {
     document.getElementById("enter").remove();
     document.getElementById("textinput").remove();
   }
@@ -129,9 +132,8 @@ const theroadnot =
 const nothinggold =
   "Nature's first green is gold, Her hardest hue to hold, Her early leaf's a flower; But only so an hour. Then leaf subsides to leaf. So Eden sank to grief, So dawn goes down to day. Nothing gold can stay.";
 
-const theoldpond =
-  "Old pond a frog jumps in water's sound";
-  
+const theoldpond = "Old pond a frog jumps in water's sound";
+
 const poppies =
   "Even the sun-clouds this morning cannot manage such skirts. Nor the woman in the ambulance Whose red heart blooms through her coat so astoundingly A gift, a love gift Utterly unasked for By a sky Palely and flamily Igniting its carbon monoxides, by eyes Dulled to a halt under bowlers. Oh my God, what am I That these late mouths should cry open In a forest of frosts, in a dawn of cornflowers.";
 
@@ -140,13 +142,12 @@ const redwoods =
 
 const albemarle =
   "Albemarle, Virginia two Piedmonts nearly touch across green water I watch my hands fill up with wilderness these mountains have given us so much & we will not even give ourselves to each other";
-  
+
 const iffire =
   "river brush float on the Rio Grande in very little water to the north a sleeper fire holdover from last season’s wilds bust sprout flame crawl the moon mistaken for a hole in the sky if next world still deer soften into field field field meadow hawk rodent nests overgrown undergrowth all tinder is white space its span a mirror your mouth around light";
 
-const onabranch =
-  "On a branch floating downriver cricket, singing.";
-  
+const onabranch = "On a branch floating downriver cricket, singing.";
+
 //style and place buttons
 const buttonTotal = document.querySelectorAll("button").length;
 let currentButton = "";
@@ -167,40 +168,39 @@ for (let i = 0; i < buttonTotal; i++) {
   currentButton.style.top = Math.abs(Math.random() * vh - 200) + "px";
 }
 
-
-
 //enter text
 function enterText() {
   clearScreen();
-  
+
   const inputdiv = document.createElement("div");
   document.getElementById("bgdiv").appendChild(inputdiv);
   inputdiv.id = "inputdiv";
-  
+
   const input = document.createElement("textarea");
   input.rows = 10;
   input.cols = 100;
   input.id = "textinput";
   input.placeholder = "Copy/paste text here";
-  
+
   document.getElementById("inputdiv").appendChild(input);
 
-  
   //trying to clear the textarea
-  input.onfocus = function(){input.value="";}
-  
+  input.onfocus = function () {
+    input.value = "";
+  };
+
   function ct() {
-    input.value= "";
+    input.value = "";
   }
   input.addEventListener("focus", ct());
   input.focus();
-  input.value = '';
+  input.value = "";
   //trying to clear the textarea
-    
+
   paragraphtext.innerText =
     "Copy/Paste a poem or lyrics into the text box and press Enter.";
   paragraphtext.style.color = "rgba(255,255,255,1)";
-  
+
   const enter = document.createElement("button");
   enter.innerText = "Enter";
   enter.id = "enter";
@@ -209,12 +209,11 @@ function enterText() {
     createScene(input.value);
   };
   document.getElementById("inputdiv").appendChild(enter);
-  
 }
 
 function reset() {
   clearScreen();
-  
+
   //make buttons visible
   for (let i = 0; i < document.querySelectorAll("button").length; i++) {
     document.querySelectorAll("button")[i].style.visibility = "visible";
@@ -296,9 +295,8 @@ function instructionsToggleFunction() {
 
 //Keypress
 document.addEventListener("keydown", captureKeypress);
-  
+
 function captureKeypress(e) {
-    
   //if the textarea is present, disable key detection
   if (document.getElementById("textinput")) {
     return;
@@ -306,12 +304,11 @@ function captureKeypress(e) {
 
   //enter text
   if (e.code == "KeyE") {
-
     if (document.getElementById("textinput") == null) {
       setTimeout(() => {
         document.getElementById("textinput").value = "";
-      }, 100)   
-  }
+      }, 100);
+    }
     enterText();
   }
 
@@ -334,7 +331,7 @@ function captureKeypress(e) {
   if (e.code == "KeyM") {
     instructionsToggleFunction();
   }
-};
+}
 
 //hint cycle
 function hintCycle() {
@@ -473,4 +470,3 @@ function mobiledrag(elmnt) {
     let y = parseInt(box.style.top);
   });
 }
-
