@@ -157,7 +157,6 @@ for (let i = 0; i < buttonTotal; i++) {
 
 //enter text
 function enterText() {
-  
   clearScreen();
   
   const inputdiv = document.createElement("div");
@@ -169,9 +168,11 @@ function enterText() {
   input.cols = 100;
   input.id = "textinput";
   input.placeholder = "Copy/paste text here";
+  
   document.getElementById("inputdiv").appendChild(input);
 
   
+  //trying to clear the textarea
   input.onfocus = function(){input.value="";}
   
   function ct() {
@@ -180,6 +181,7 @@ function enterText() {
   input.addEventListener("focus", ct());
   input.focus();
   input.value = '';
+  //trying to clear the textarea
     
   paragraphtext.innerText =
     "Copy/Paste a poem or lyrics into the text box and press Enter.";
@@ -193,7 +195,7 @@ function enterText() {
     createScene(input.value);
   };
   document.getElementById("inputdiv").appendChild(enter);
-
+  
 }
 
 function reset() {
@@ -279,14 +281,23 @@ function instructionsToggleFunction() {
 }
 
 //Keypress
-document.addEventListener("keydown", (e) => {
+document.addEventListener("keydown", captureKeypress);
+  
+function captureKeypress(e) {
+    
   //if the textarea is present, disable key detection
   if (document.getElementById("textinput")) {
     return;
   }
 
-  //load text
+  //enter text
   if (e.code == "KeyE") {
+
+    if (document.getElementById("textinput") == null) {
+      setTimeout(() => {
+        document.getElementById("textinput").value = "";
+      }, 100)   
+  }
     enterText();
   }
 
@@ -309,7 +320,7 @@ document.addEventListener("keydown", (e) => {
   if (e.code == "KeyM") {
     instructionsToggleFunction();
   }
-});
+};
 
 //hint cycle
 function hintCycle() {
