@@ -132,7 +132,21 @@ const nothinggold =
 const theoldpond =
   "Old pond a frog jumps in water's sound";
   
+const poppies =
+  "Even the sun-clouds this morning cannot manage such skirts. Nor the woman in the ambulance Whose red heart blooms through her coat so astoundingly A gift, a love gift Utterly unasked for By a sky Palely and flamily Igniting its carbon monoxides, by eyes Dulled to a halt under bowlers. Oh my God, what am I That these late mouths should cry open In a forest of frosts, in a dawn of cornflowers.";
 
+const redwoods =
+  "The first time I entered a forest I saw the trees, of course, huddled together in rings, thin veils of mist between their branches, some dead but still standing, or fallen thigh bones on the desiccated floor, but I also saw the great buttery platters of fungus climbing like stepping stones up their shaggy trunks: tzadee, tzadee, tzadee, each a different size: small to large or large to small, as if some rogue architect had been cocky enough to install them on the stunned trees’ northern sides, leading up to the balcony of their one ton boughs. I was here";
+
+const albemarle =
+  "Albemarle, Virginia two Piedmonts nearly touch across green water I watch my hands fill up with wilderness these mountains have given us so much & we will not even give ourselves to each other";
+  
+const iffire =
+  "river brush float on the Rio Grande in very little water to the north a sleeper fire holdover from last season’s wilds bust sprout flame crawl the moon mistaken for a hole in the sky if next world still deer soften into field field field meadow hawk rodent nests overgrown undergrowth all tinder is white space its span a mirror your mouth around light";
+
+const onabranch =
+  "On a branch floating downriver cricket, singing.";
+  
 //style and place buttons
 const buttonTotal = document.querySelectorAll("button").length;
 let currentButton = "";
@@ -346,7 +360,7 @@ function createScene(poem) {
   clearScreen();
   paragraphtext.style.transition = "color 1s";
   poem = poem.split(" ");
-  regex = /([a-zA-Zé-œàù']*)/;
+  regex = /([a-zA-Zé-œàù'&]*)/;
   let newDiv;
 
   for (const word in poem) {
@@ -459,3 +473,4 @@ function mobiledrag(elmnt) {
     let y = parseInt(box.style.top);
   });
 }
+
