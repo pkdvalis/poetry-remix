@@ -172,7 +172,8 @@ for (let i = 0; i < buttonTotal; i++) {
   currentButton.style.top = Math.abs(Math.random() * vh - 200) + "px";
 }
 
-//enter text
+
+//enter tex
 function enterText() {
   clearScreen();
 
