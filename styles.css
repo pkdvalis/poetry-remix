@@ -6,11 +6,10 @@
 }
 
 body {
-  background: rgb(9, 9, 121);
   background: linear-gradient(
     0deg,
-    rgba(9, 9, 121, 1) 10%,
-    rgba(191, 156, 209, 1) 100%
+    rgba(3, 3, 60, 1) 10%,
+    rgba(90, 75, 100, 1) 100%
   );
 }
 
@@ -21,7 +20,6 @@ body {
   text-align: center;
   position: relative;
 }
-
 
 p {
   width: 100%;
@@ -46,6 +44,7 @@ button {
   border-radius: 8px;
   font-size: 1rem;
   transition: transform 0.3s;
+  transition: filter 0.05s;
   transition: filter 0.05s;
   cursor: pointer;
 }
@@ -122,4 +121,10 @@ button:active {
   position: absolute;
   bottom: 10px;
   right: 40px;
+}
+
+#menubutton {
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }

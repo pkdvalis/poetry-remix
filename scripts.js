@@ -91,6 +91,10 @@ function removeMagnets() {
   if (document.querySelectorAll(".magnet").length > 0) {
     for (let i = 0; i <= document.querySelectorAll(".magnet").length; i++) {
       document.querySelectorAll(".magnet")[i].remove();
+
+  if (document.querySelectorAll(".magnet").length > 0) {
+    for (let i = 0; i <= document.querySelectorAll(".magnet").length; i++) {
+      document.querySelectorAll(".magnet")[i].remove();
     }
   }
   totalMagnets = 0;
@@ -358,6 +362,16 @@ function createScene(poem) {
   paragraphtext.style.transition = "color 1s";
   poem = poem.split(" ");
   regex = /([a-zA-Zé-œàù'&]*)/;
+
+  //menu button
+  let menuDiv = document.createElement("button");
+  menuDiv.className = "insButton";
+  menuDiv.id = "menubutton";
+  menuDiv.innerText = "Menu";
+  document.body.appendChild(menuDiv);
+
+  menuDiv.addEventListener("click", instructionsToggleFunction);
+
   let newDiv;
 
   for (const word in poem) {
