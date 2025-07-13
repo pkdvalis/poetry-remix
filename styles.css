@@ -69,7 +69,7 @@ button:active {
   cursor: move;
   z-index: 10;
   border-radius: 8px;
-  font-size: 1rem;
+  font-size: 1.5rem;
   transition: transform 0.3s;
   transition: filter 1s;
 }
